@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>LOG IN </h1>
+    <form id="form">
+        <label>username</label>
+        <input id="user" type="text" placeholder="enter username" />
+        <label>password</label>
+        <input id="pass" type="text" placeholder="enter password" />
+        <input type="submit" value="signup" />
+    </form>
+</body>
+</html>
+<script>
+document.querySelector("#form").addEventListener("submit",formsubmit);
+var arr=JSON.parse(localStorage.getItem("data")) || [];
+
+function formsubmit(event){
+    event.preventDefault();
+
+    var name=document.querySelector("#user").value;
+    var pass=document.querySelector("#pass").value;
+
+    for( var i=0;i<arr.length;i++){
+        if(arr[i].userName==name && arr[i].passWord==pass){
+            alert(`welcome ${name}`);
+            window.location.href="landingpage.html"
+        }
+        else if(arr[i].userName!=name && arr[i].passWard==pass){
+            alert("check username");
+        }
+        else if((arr[i].userName==name && arr[i].passWard!=pass)){
+            alert("check password")
+        }
+        else{
+            alert("sign up first")
+        }
+    }
+
+}
+</script>

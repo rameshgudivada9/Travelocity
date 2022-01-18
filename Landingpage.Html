@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>home page</title>
     <style>
  .main{
         display: flex;
@@ -58,6 +58,68 @@
         color: white;
         text-decoration: none;
     }
+    .container{
+        border: 1px solid red ;
+    justify-content: center;
+
+        display: flex;
+        margin-bottom: 10px;
+    }
+    .container>div>button{
+        margin-left: 15px;
+        border: 0px;
+        background-color: white;
+        font-size: 20px;
+    }
+    #stays{
+        /* margin-left: 350px; */
+    }
+   .main2{
+    border: 1px solid red ;
+   justify-content: center;
+   align-items: center;
+    margin: 30px 120px;
+   }
+.inone{
+    /* margin-left: 50px; */
+    height: 40px;
+    width: 30%;
+    font-size: 18px;
+    border-radius: 5px;
+}
+#start{
+    height: 40px; 
+    border-radius: 5px;
+    margin: 10px;
+}
+.intwo{
+    
+    height: 40px;
+    width: 30%;
+    font-size: 18px;
+    border-radius: 5px;
+}
+#scales{
+    margin-left: 50px;
+}
+#check{
+    display: flex;
+
+}
+.search{
+    text-align: center;
+
+}
+.search>button{
+    text-align: center;
+    padding: 13px;
+    width: 15%;
+    border-radius: 5px;
+    border: none;
+    background-color: #09438b;
+    color: white;
+}
+
     </style>
 </head>
 <body>
@@ -74,23 +136,46 @@
                 <option value="">Cruises</option>
                 </div>
             </select>
-            <!-- <div class="dropdown">
-                <button class="dropbtn">Dropdown 
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                  <a href="#">Link 1</a>
-                  <a href="#">Link 2</a>
-                  <a href="#">Link 3</a>
-                </div> -->
+          
         </div>
         <div class="right">
          <div><a href="">Support</a></div>
          <div><a href="">Trips</a></div>
-         <div><a href="">Sign in</a></div>
+         <div><a href="Login.html">Log in</a></div>
          <div><a href="Signup.html">Sign up</a></div>
         </div>
       </div>
+
+      <div class="main2">
+      <div class="container">
+       <div><button id="stays">Stays</button></div>
+       <div><button>Flights</button></div>
+       <div><button>Cars</button></div>
+       <div><button>Packages</button></div>
+       <div><button>Cruises</button></div>
+      </div>
+      <hr/>
+      
+     <input class="inone" type="" placeholder="Going To"/>
+     <input type="date" id="start" place holder="check-in"
+     min="2022-01-01" max="2023-12-31">
+     <input type="date" id="start" 
+     min="2022-01-01" max="2023-12-31">
+     <input class="intwo" type="" placeholder=" No Of Trevellers"/>
+   <div id="check">
+    <div>
+        <input type="checkbox" id="scales"/>
+        <label for="Add a Flight">Add a Flight</label>
+      </div>
+      <div>
+        <input type="checkbox" id="scales" />
+        <label for="Add a Flight">Add a Car</label>
+      </div>
+   </div>
+   <div class="search"><button>Search</button></div>
+      </div>
+
+
 </body>
 </html>
 <script>

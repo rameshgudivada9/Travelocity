@@ -4,24 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign up</title>
     <style></style>
 </head>
 <body>
-    <h1>SIGNUP PAGE</h1>
+    <h1>SIGNUP AN ACCOUNT</h1>
     <form id="form">
-        <label>username</label>
         <input id="user" type="text" placeholder="enter username" /><br/>
-        <label>Email</label>
-        <input id="email" type="text" placeholder="enter Email" />
-        <label>mobile</label>
-        <input id="mobile" type="number" placeholder="enter number" />
-        <label>password</label>
-        <input id="pass" type="text" placeholder="enter password" />
-        <input type="submit" value="signup" />
+        <input id="email" type="text" placeholder="enter Email" /><br/>
+        <input id="mobile" type="number" placeholder="enter number" /><br/>
+        <input id="pass" type="text" placeholder="enter password" /><br/>
+        <input type="submit" value="continue" />
     </form>
 </body>
 </html>
 <script>
+    document.querySelector("#form").addEventListener("submit",formsubmit);
+    var arr=JSON.parse(localStorage.getItem("data")) || [];
+    function formsubmit(event){
+        event.preventDefault();
+        var name=document.querySelector("#user").value;
+        var email=document.querySelector("#email").value;
+        var mobile=document.querySelector("#mobile").value;
+        var pass=document.querySelector("#pass").value;
+        
+    var obj={
+        userName: name,
+        emailAdd: email,
+        mobileNum: mobile,
+        passWord: pass,
+    };
+    arr.push(obj)
+  localStorage.setItem("data",JSON.stringify(arr));
+  for( var i=0;i<arr.length;i++){
+    if(arr[i].userName==name && arr[i].emailAdd==email && arr[i].mobileNum==mobile && arr[i].passWord==pass){
+      alert("Already have an account");
+      window.location.href="login.html";
 
+  }
+  else{
+    alert("sign up sucess");
+
+window.location.href="login.html";
+  }
+
+}
+    }
 </script>
