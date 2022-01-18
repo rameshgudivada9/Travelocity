@@ -110,7 +110,7 @@
     text-align: center;
 
 }
-.search>button{
+.search>input{
     text-align: center;
     padding: 13px;
     width: 15%;
@@ -119,10 +119,20 @@
     background-color: #09438b;
     color: white;
 }
+.total{
+    border: 1px solid red;
+}
+@media only screen and (min-width:320px) and (max-width:721px above){
+
+}
+@media only screen and (min-width:0px) and (max-width:321px){
+    
+}
 
     </style>
 </head>
 <body>
+    <div class="total">
     <div class="main">
         <div class="left">
             <img src="https://www.travelocity.com/_dms/header/logo.svg?locale=en_US&siteid=80001&2"/>
@@ -155,7 +165,7 @@
        <div><button>Cruises</button></div>
       </div>
       <hr/>
-      
+      <form class="form">
      <input class="inone" type="" placeholder="Going To"/>
      <input type="date" id="start" place holder="check-in"
      min="2022-01-01" max="2023-12-31">
@@ -172,10 +182,10 @@
         <label for="Add a Flight">Add a Car</label>
       </div>
    </div>
-   <div class="search"><button>Search</button></div>
+  <div class="search"> <input  type=submit value="Search"/></div>
       </div>
-
-
+    </form>
+  </div>
 </body>
 </html>
 <script>

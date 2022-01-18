@@ -5,17 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
-    <style></style>
+    <style>
+        #main{
+            align-items: center;
+            width: 30%;
+            margin: auto;
+        }
+        #form>div{
+            justify-content: center;
+            align-items: center;
+        
+            margin: 25px;
+        
+        }
+        #logo{
+            align-items: center;
+            margin: auto;
+        }
+        #form>div>input{
+            align-items: center;
+            height: 45px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 20px;
+        
+        }
+        #continue{
+            background-color: #09438b;
+            color: white;
+        }
+     
+    </style>
 </head>
 <body>
-    <h1>SIGNUP AN ACCOUNT</h1>
+    <div id="main">
+        <div id="logo"> <img src="https://www.travelocity.com/_dms/interstitial/logo.svg?locale=en_US&siteid=80001"/> </div>
+        <hr/>
+   <div> <h1>SIGNUP AN ACCOUNT</h1></div>
     <form id="form">
-        <input id="user" type="text" placeholder="enter username" /><br/>
-        <input id="email" type="text" placeholder="enter Email" /><br/>
-        <input id="mobile" type="number" placeholder="enter number" /><br/>
-        <input id="pass" type="text" placeholder="enter password" /><br/>
-        <input type="submit" value="continue" />
+       <div><input id="user" type="text" placeholder="Enter username" /><br/></div>
+       <div> <input id="email" type="text" placeholder="Enter Email" /><br/></div>
+       <div><input id="mobile" type="number" placeholder="Mobile Number" /><br/></div>
+       <div><input id="pass" type="text" placeholder="Enter Password" /><br/></div>
+       <div> <input id="continue" type="submit" value="continue" /></div>
     </form>
+    </div>
 </body>
 </html>
 <script>
