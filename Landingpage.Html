@@ -6,9 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home page</title>
     <style>
+        *{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        body{
+            background-color: #f0f3f5;
+        }
+
+        #total{
+      background-image: url("https://forever.travel-assets.com/flex/flexmanager/images/2021/12/20/TVLY_JanuarySale_imgB_1150x864_20211210.jpg");
+      background-repeat:no-repeat;
+      background-size: 100% 100%;
+      border: 5px solid blue;
+      height: 600px;
+      background-position: right top;
+      
+ }
+ #total{
+     width: 100%;
+ }
  .main{
         display: flex;
-        height: 30%;
+        /* height: 30%; */
         margin: auto;
         padding: 10px;
         color: white;
@@ -61,7 +80,7 @@
     .container{
         border: 1px solid red ;
     justify-content: center;
-
+    background-color: white;
         display: flex;
         margin-bottom: 10px;
     }
@@ -79,9 +98,10 @@
    justify-content: center;
    align-items: center;
     margin: 30px 120px;
+    background-color: white;
    }
 .inone{
-    /* margin-left: 50px; */
+    margin-left: 50px;
     height: 40px;
     width: 30%;
     font-size: 18px;
@@ -122,6 +142,170 @@
 .total{
     border: 1px solid red;
 }
+.bottom{
+    display: grid;
+    border: 1px solid red;
+    margin: auto;
+    width: 85%;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 300px 300px;
+
+}
+.bottom>div{
+    border: 1px solid red;
+    margin: 25px;
+}
+.four{
+    grid-area: 2/1/2/3;
+    background-image: url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/08/TVLY_Storefront_AllInclusive_imgB_1199x399_20211104.jpg");
+    background-position:center ;
+    /* background-repeat: no-repeat; */
+    border-radius: 8px;
+}
+#four>h2{
+    margin-top: 100px;
+    background-color: none;
+}
+.one{
+    background-image: url("https://forever.travel-assets.com/flex/flexmanager/images/2020/11/12/TVLY_StoreFrontRefresh_BrandPromise_FitForYou_sfimg_562x240_20201111.jpg?impolicy=fcrop&w=400&h=171&q=mediumLow");
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    
+}
+h2{
+    color:#000080;
+    margin-top: 130px;
+    background-color: blanchedalmond;
+    
+}
+p{
+    color:#6d777f;
+
+}
+.two{
+    background-image: url("https://forever.travel-assets.com/flex/flexmanager/images/2020/11/12/TVLY_StoreFrontRefresh_BrandPromise_Transparency_sfimg_562x240_20201111.jpg?impolicy=fcrop&w=400&h=171&q=mediumLow");
+
+    background-position: top;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+}
+.three{
+    
+    background-image: url("https://forever.travel-assets.com/flex/flexmanager/images/2020/11/12/TVLY_StoreFrontRefresh_BrandPromise_GotYourBack_sfimg_562x240_20201111.jpg?impolicy=fcrop&w=400&h=171&q=mediumLow");    background-position: top;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+}
+.five{
+     
+    background-image: url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/08/TVLY_Storefront_LastMinute_imgB_375x468_20211104.jpg");
+
+    background-repeat: no-repeat;
+    border-radius: 8px;
+}
+#five>h2{
+    margin-top: 100px;
+    background-color: none;
+}
+button{
+    margin-left: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    color:#000080;
+}
+h1{
+    margin-left: 100px;
+}
+
+
+.bott{
+    display: grid;
+    border: 1px solid red;
+    margin: auto;
+    width: 85%;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 300px ;
+
+}
+.bott>div{
+    margin: 10px;
+    border: 1px solid red;
+
+}
+.onee{
+    background-image: url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/08/TVLY_Storefront_Beach_imgB_900x506_20211104.jpg?impolicy=fcrop&w=300&h=200&q=mediumLow");
+    background-position: center top;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    background-size: 100% 280px;
+}
+.onee>h2{
+    margin-top: 230px;
+}
+.twoo{
+    background-image: url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/08/TVLY_Storefront_Car_imgB_900x506_20211104.jpg?impolicy=fcrop&w=300&h=200&q=mediumLow");
+    background-position: center top;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    background-size: 100% 280px;
+}
+.twoo>h2{
+    margin-top: 230px;
+}
+.threee{
+    background-image: url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/08/TVLY_Storefront_MOD_imgB_900x506_20211104.jpg?impolicy=fcrop&w=300&h=200&q=mediumLow");
+    background-position: center top;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    background-size: 100% 280px;
+}
+.threee>h2{
+    margin-top: 230px;
+}
+.fourr{
+    background-image: url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/08/TVLY_Storefront_VacationRentals_imgB_900x506_20211104.jpg?impolicy=fcrop&w=300&h=200&q=mediumLow");
+    background-position: center top;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    background-size: 100% 280px;
+}
+.fourr>h2{
+    margin-top: 230px;
+}
+
+
+.beach{
+    display: grid;
+    border: 1px solid red;
+    margin: auto;
+    width: 85%;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 300px ;
+    margin-top: 0px;
+
+}
+.beach>div{
+    margin: 10px;
+    border: 1px solid red;
+
+}
+.ball{
+    grid-area: 1/1/1/4;
+    background-image: url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/08/TVLY_Storefront_Family_imgB_1200x674_20211104.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    background-size: 100% 380px;
+}
+.add{
+    background-image: url("https://tpc.googlesyndication.com/simgad/10615505264501381136?");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 100% 280px;
+
+}
+
+
+
 @media only screen and (min-width:320px) and (max-width:721px above){
 
 }
@@ -132,7 +316,7 @@
     </style>
 </head>
 <body>
-    <div class="total">
+    <div id="total">
     <div class="main">
         <div class="left">
             <img src="https://www.travelocity.com/_dms/header/logo.svg?locale=en_US&siteid=80001&2"/>
@@ -186,6 +370,50 @@
 
       </div>
     </form>
+  </div>
+  <div class="bottom">
+    <div class="one"> 
+        <h2>Find Your Perfect Trip</h2>
+        <p>plan a trip from whole family -from family travel tips to family-friendly,ours,make it easy.</p>
+    </div>
+    <div class="two">
+       <h2>Book With Flexibility</h2>
+        <p>looking for a change of scenery,but want something flexible? we can book with peace of mind</p>
+    </div>
+    <div class="three">
+        <h2>We've got your back</h2>
+        <p>Need more help along with your journey?we offer 24/7 support in social and thriugh vitual agengies.</p>
+    </div>
+    <div class="four" id="four">
+        <h2>All-inclusive resort</h2>
+        <h4>think of nothing beyound having a great time<br/>with your family.</h4>
+        <button>View details</button>
+    </div>
+    <div class="five" id="five">
+        <h2>Last Minute gate Ways</h2>
+        <h4>Celebrate the gate way<br/> with an unexpected Gateway</h4>
+        <button>View details</button>
+    </div>
+  </div>
+ <h1>Start planning your next trip</h1>
+  <div class=bott>
+      <div class="onee">
+          <h2>Sunny Beach Hotel Offer</h2>
+      </div>
+      <div class="twoo">
+          <h2>Car Rental Deals</h2>
+      </div>
+      <div class="threee">
+          <h2>Member Discouts</h2>
+      </div>
+      <div class="fourr">
+          <h2>Vaction Rental Offers</h2>
+      </div>
+  </div>
+  <h1>Featured Offers</h1>
+  <div class="beach">
+      <div class="ball"></div>
+      <div class="add"></div>
   </div>
 </body>
 </html>
