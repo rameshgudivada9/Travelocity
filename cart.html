@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        body{
+            background-color: #f0f3f5;
+        }
+         .main{
+        display: flex;
+        /* height: 30%; */
+        margin: auto;
+        padding: 10px;
+        color: white;
+        background-color: #09438b;
+        border-radius: 5px;
+    }
+    .left{
+        display: flex;
+        width: 60%;
+        height: 100%;
+        margin-right: 2px;
+        padding-left: 100px;
+        
+    }
+    .right{
+        display: flex;
+        width: 40%;
+        height: 100%;
+        flex-grow: 1;
+        margin-right: 10px;
+        color: white;
+        
+    }
+    .right>div{
+        margin-top: 18px;
+        flex-grow: 1;
+        font-size: 18px;
+        color: white;
+    }
+    select{
+    margin: 25px 0px;
+    border: none;
+    background-color: #1c2938;
+    color: white;
+    }
+    .option{
+        margin-left: 30px;
+        background-color: #09438b;
+        border: none;
+        
+    }
+    .sub{
+         width: 100px;
+         background-color: white;
+    }
+    a{
+        color: white;
+        text-decoration: none;
+    }
+
+
+
+    #main{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 20px;
+        }
+    
+        #sub {
+        display: flex;
+        justify-content: space-around;
+      }
+      #sub > p:nth-child(2) {
+        text-decoration: line-through;
+      }
+      #check{
+          padding: 20px;
+          margin-bottom: 20px;
+          background-color: #3a72c3;
+          color: white;
+          font-size: 15px;
+          border-radius: 10px;
+          border: none;
+      }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="left">
+            <img src="https://www.travelocity.com/_dms/header/logo.svg?locale=en_US&siteid=80001&2"/>
+            <select class="option">
+                <div class="sub">
+                <option>More Travels</option>
+                <option value="">Packeges</option>
+                <option value="">Stays</option>
+                <option value="">Cars</option>
+                <option value="">Flights</option>
+                <option value="">Cruises</option>
+                </div>
+            </select>
+          
+        </div>
+        <div class="right">
+         <div><a href="location.html">Locations</a></div>
+         <div><a href="cart.html">Cart</a></div>
+         <div><a href="Login.html">Log in</a></div>
+         <div><a href="Signup.html">Sign up</a></div>
+        </div>
+        </div>
+        <h1>Cart</h1>
+        <h3></h3>
+        <h2></h2>
+        <button id="check" onclick="window.location.href='checkout.html'">CHECK OUT</button>
+        <div id="main"></div>
+</body>
+</html>
+<script>
+        var cartArr=JSON.parse(localStorage.getItem("cartitem"))|| [];
+    cartArr.map(function(ele){
+    var div = document.createElement("div");
+
+    var image = document.createElement("img");
+    image.setAttribute("src", ele.image_url);
+
+    var name = document.createElement("p");
+    name.textContent = ele.name;
+
+    var div2 = document.createElement("div");
+    div2.setAttribute("id", "sub");
+
+    var p1 = document.createElement("p");
+    p1.textContent = ele.price;
+
+    var p2 = document.createElement("p");
+    p2.textContent = ele.strikedoffprice;
+
+    div2.append(p1, p2);
+    var place = document.createElement("h4");
+    place.textContent = ele.placeName;
+   
+    
+    div.append(image, name, div2,place);
+    document.querySelector("#main").append(div);
+});
+ var total=cartArr.reduce(function(acc,cv){
+     return acc+Number(cv.price)
+ },0);
+ document.querySelector("h3").textContent=`No of Places = ${cartArr.length}`;
+ document.querySelector("h2").textContent=`Total amount is ₹ ${total}`;
+
+</script>

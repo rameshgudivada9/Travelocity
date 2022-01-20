@@ -5,9 +5,516 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+          *{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        body{
+            background-color: #f0f3f5;
+        }
+         .main{
+        display: flex;
+        /* height: 30%; */
+        margin: auto;
+        padding: 10px;
+        color: white;
+        background-color: #09438b;
+        border-radius: 5px;
+    }
+    .left{
+        display: flex;
+        width: 60%;
+        height: 100%;
+        margin-right: 2px;
+        padding-left: 100px;
+        
+    }
+    .right{
+        display: flex;
+        width: 40%;
+        height: 100%;
+        flex-grow: 1;
+        margin-right: 10px;
+        color: white;
+        
+    }
+    .right>div{
+        margin-top: 18px;
+        flex-grow: 1;
+        font-size: 18px;
+        color: white;
+    }
+    select{
+    margin: 25px 0px;
+    border: none;
+    background-color: #1c2938;
+    color: white;
+    }
+    .option{
+        margin-left: 30px;
+        background-color: #09438b;
+        border: none;
+        
+    }
+    .sub{
+         width: 100px;
+         background-color: white;
+    }
+    a{
+        color: white;
+        text-decoration: none;
+    }
+
+
+
+    #container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 20px;
+        }
+    #container>div{
+        border-bottom: 1px solid gray;
+    }
+        #sub {
+        display: flex;
+        justify-content: space-around;
+      }
+      #sub > p:nth-child(2) {
+        text-decoration: line-through;
+      }
+      #sub > p:nth-child(1) {
+        font-size: 20px;
+      }
+      .add{
+      background-color:#3a72c3;
+      padding: 10px;
+      margin-left: 150px;
+      color: lavender;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 10px;
+      }
+      h4{
+          background-color: #c3c2c0;
+      }
+      h3{
+          /* color: #d3b889; */
+      }
+      #goto{
+          padding: 20px 40px;
+          margin-bottom: 20px;
+          background-color: #31469e;
+          color: white;
+          border-radius: 10px;
+          font-size: 15px;
+      }
+
+
+
+
+    </style>
     
 </head>
 <body>
+    <div class="main">
+        <div class="left">
+            <img src="https://www.travelocity.com/_dms/header/logo.svg?locale=en_US&siteid=80001&2"/>
+            <select class="option">
+                <div class="sub">
+                <option>More Travels</option>
+                <option value="">Packeges</option>
+                <option value="">Stays</option>
+                <option value="">Cars</option>
+                <option value="">Flights</option>
+                <option value="">Cruises</option>
+                </div>
+            </select>
+          
+        </div>
+        <div class="right">
+         <div><a href="location.html">Locations</a></div>
+         <div><a href="cart.html">Cart</a></div>
+         <div><a href="Login.html">Log in</a></div>
+         <div><a href="Signup.html">Sign up</a></div>
+        </div>
+        </div>
+
+
     <h1>LOCATIONS</h1>
+    <button id="goto" onclick="window.location.href='cart.html'">Go to cart</button>
+    <select id="pricesort" onchange="selectprice()">
+      <option value="">select sort</option>
+      <option value="high">High to Low</option>
+      <option value="low">Low to High</option>
+    </select>
+    <select id="filter" onchange="filtercat()" >
+      <option value="">Select places</option>
+      <option value="New delhi">New delhi</option>
+      <option value="Mumbai">mumbai</option>
+      <option value="Goa">Goa</option>
+      <option value="Hyderabad">hyderabad</option>
+    </select>
+    
+    <div id="container">
+
+    </div>
 </body>
 </html>
+<script>
+         var placeData = [
+    {
+      image_url:
+        "https://images.trvl-media.com/hotels/2000000/1580000/1577600/1577537/9b129962.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium",
+      name: "ITC,KAKATIYA,A LUXURY HOTEL,MADHAPUR",
+      price: 2000,
+      strikedoffprice: 2599,
+      placeName:"Hyderabad",
+    },
+    {
+      image_url:
+     " https://images.trvl-media.com/hotels/5000000/4900000/4896100/4896027/00a73251.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium",
+      name: "TRIDENT HOTEL ",
+      price: 3000,
+      strikedoffprice: 4000,
+      placeName:"Hyderabad",
+    },
+    {
+      image_url:
+        "https://images.trvl-media.com/hotels/11000000/10980000/10974700/10974613/7a387052.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium",
+      name: "SHERATON HOTEL,HITECH-CITY",
+      price: 4000,
+      strikedoffprice: 6000,
+      placeName:"Hyderabad",
+
+    },
+    {
+      image_url:
+        "https://images.trvl-media.com/hotels/2000000/1490000/1489700/1489627/791deb7a.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium",
+      name: "NOVATEL,AIR-PORT ROAD",
+      price: 5000,
+      strikedoffprice: 8000,
+      placeName:"Hyderabad",
+    },
+    {
+      image_url:
+        "https://images.trvl-media.com/hotels/11000000/10980000/10974700/10974613/6a56120c.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium",
+      name: "THE WESTIN MIND SPACE HOTEL",
+      price: 2500,
+      strikedoffprice: 5099,
+      placeName:"Hyderabad",
+
+    },
+    {
+      image_url:
+        "https://images.trvl-media.com/hotels/25000000/24300000/24290700/24290609/91a43d87.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium",
+      name: "LE MERIDIAN HOTEL,MADHAPUR",
+      price: 2200,
+      strikedoffprice: 3199,
+      placeName:"Hyderabad",
+
+    },
+    {
+      image_url:
+        "https://images.trvl-media.com/hotels/25000000/24300000/24290700/24290609/11e7acae.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium",
+      name: " PARK HOTEL, METRO STATION ROAD",
+      price: 5999,
+      strikedoffprice: 10099,
+      placeName:"Hyderabad",
+
+    },
+
+
+
+
+
+    {
+      image_url:
+        "https://images.trvl-media.com/hotels/25000000/24060000/24057300/24057290/cf70e5ad.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium",
+      name: "ROYAL RESORT,NEAR PORT  ",
+      price: 3000,
+      strikedoffprice: 5000,
+      placeName:"Goa",
+
+    },
+    {
+      image_url:
+        "https://images.trvl-media.com/hotels/5000000/4660000/4651800/4651727/90b54eab.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium",
+      name: "PARADISE ",
+      price: 2000,
+      strikedoffprice: 3440,
+      placeName:"Goa",
+
+    },
+    {
+      image_url:
+        "https://images.trvl-media.com/hotels/10000000/9320000/9316700/9316675/132dc079.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium ",
+      name: "THE WALL HOTEL",
+      price: 4000,
+      strikedoffprice: 5000,
+      placeName:"Goa",
+    },
+    {
+      image_url:
+        "https://images.trvl-media.com/hotels/2000000/1720000/1710200/1710123/9d684029.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium ",
+      name: "CROWN PLAZA,NEAR BUS STATION ",
+      price: 2500,
+      strikedoffprice: 3599,
+      placeName:"Goa",
+    },
+    {
+      image_url:
+        "https://images.trvl-media.com/hotels/2000000/1830000/1823800/1823707/2e002832.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium",
+      name: "THE PALACE HOTEL ",
+      price: 5000,
+      strikedoffprice: 6000,
+      placeName:"Goa",
+    },
+    {
+      image_url:
+        "https://images.trvl-media.com/hotels/5000000/4660000/4651800/4651727/c9be0802.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium",
+      name: "WELCOME HOTEL  ",
+      price: 6000,
+      strikedoffprice: 8000,
+      placeName:"Goa",
+    },
+    {
+      image_url:
+        "https://images.trvl-media.com/hotels/14000000/13090000/13083600/13083538/380e3879.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium ",
+      name: "PRIDE PLAZA",
+      price: 5000,
+      strikedoffprice: 9000,
+      placeName:"Goa",
+    },
+    {
+      image_url:
+        "https://images.trvl-media.com/hotels/11000000/10220000/10210200/10210101/532d599e.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium ",
+      name: "ROSEATE HOUSE",
+      price: 9999,
+      strikedoffprice: 12000,
+      placeName:"Goa",
+    },
+
+
+
+
+
+
+
+    {
+      image_url:
+        "https://images.trvl-media.com/hotels/20000000/19460000/19458500/19458493/a7678da8.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium",
+      name: " TAJ HOTEL ",
+      price: 10000,
+      strikedoffprice: 15000,
+      placeName:"Mumbai",
+
+    },
+    {
+      image_url:
+        "https://images.trvl-media.com/hotels/1000000/540000/533200/533142/f6cf4dfe.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium",
+      name: "HILTON HOTEL ",
+      price: 5000,
+      strikedoffprice: 8000,
+      placeName:"Mumbai",
+
+    },
+    {
+      image_url:
+        "https://images.trvl-media.com/hotels/3000000/2640000/2631500/2631410/84d1abe2.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium",
+      name: "ABIHADTH HOTEL  ",
+      price: 6000,
+      strikedoffprice: 12000,
+      placeName:"Mumbai",
+
+    },
+    {
+      image_url:
+        " https://images.trvl-media.com/hotels/1000000/980000/977300/977288/4c08ebe2.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium",
+      name: " THE LAKE HOTEL",
+      price: 8500,
+      strikedoffprice: 14000,
+      placeName:"Mumbai",
+
+    },
+    {
+      image_url:
+        " https://images.trvl-media.com/hotels/2000000/1790000/1787600/1787501/f6afaf36.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium ",
+      name: " WATER STORES HOTEL ",
+      price: 5000,
+      strikedoffprice: 9000,
+      placeName:"Mumbai",
+
+    },
+    {
+      image_url:
+        " https://images.trvl-media.com/hotels/1000000/920000/916300/916201/47775203.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium ",
+      name: "GREEN PARK HOTEL  ",
+      price: 9500,
+      strikedoffprice: 14000,
+      placeName:"Mumbai",
+
+    },
+    {
+      image_url:
+        " https://images.trvl-media.com/hotels/2000000/1870000/1869800/1869791/a048c9eb.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium ",
+      name: " REDIAZON HOTEL ",
+      price: 6000,
+      strikedoffprice: 12000,
+      placeName:"Mumbai",
+
+    },
+
+
+
+
+
+    {
+      image_url:
+        " https://images.trvl-media.com/hotels/28000000/27290000/27286000/27285962/9ff6ccbf.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium  ",
+      name: " REDIAZON HOTEL  ",
+      price: 6520,
+      strikedoffprice: 9000,
+      placeName:"New delhi",
+
+    },
+    {
+      image_url:
+        " https://images.trvl-media.com/hotels/72000000/71460000/71459000/71458917/d2a95b8b.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium ",
+      name: " RED FORT HOTEL  ",
+      price: 11000,
+      strikedoffprice: 20000,
+      placeName:"New delhi",
+
+    },
+    {
+      image_url:
+        " https://images.trvl-media.com/hotels/5000000/4260000/4250900/4250867/b8fe262d.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium  ",
+      name: " GATE WAY HOTEL ",
+      price: 8000,
+      strikedoffprice: 15000,
+      placeName:"New delhi",
+
+    },
+    {
+      image_url:
+        " https://images.trvl-media.com/hotels/9000000/8740000/8738300/8738241/9fdc0ad2.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium ",
+      name: "TITANIC HOTEL   ",
+      price: 4000,
+      strikedoffprice: 7000,
+      placeName:"New delhi",
+
+    },
+    {
+      image_url:
+        " https://images.trvl-media.com/hotels/18000000/17190000/17184300/17184235/3f7840e8.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium ",
+      name: " BROVAR PORTICO ",
+      price: 9000,
+      strikedoffprice: 18000,
+      placeName:"New delhi",
+
+    },
+    {
+      image_url:
+        "https://images.trvl-media.com/hotels/40000000/39680000/39678400/39678363/2293f0c1.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium ",
+      name: "TASHREE",
+      price: 7000,
+      strikedoffprice: 1000,
+      placeName:"New delhi",
+
+    },
+    {
+      image_url:
+        "https://images.trvl-media.com/hotels/5000000/4660000/4651800/4651727/90b54eab.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium",
+      name: "INDORE HOTEL",
+      price: 5500,
+      strikedoffprice: 8000,
+      placeName:"New delhi",
+
+    },
+    {
+      image_url:
+        "https://images.trvl-media.com/hotels/10000000/9320000/9316700/9316675/132dc079.jpg?impolicy=fcrop&w=455&h=235&p=1&q=medium",
+      name: "THE STANDS HOTEL",
+      price: 6000,
+      strikedoffprice: 10000,
+      placeName:"New delhi",
+
+    },
+
+  ];
+var cartArr=JSON.parse(localStorage.getItem("cartitem")) ||[];
+
+
+  displayData(placeData)
+
+  function filtercat(){
+    var selected=document.querySelector("#filter").value;
+    var filterlist=placeData.filter(function(ele){
+
+      return ele.placeName==selected;
+    });
+    displayData(filterlist);
+  }
+
+function selectprice(){
+  var select=document.querySelector("#pricesort").value;
+  if(select=="high"){
+    placeData.sort(function(a,b){
+      return Number(b.price)-Number(a.price);
+    })
+  }
+  if(select=="low"){
+    placeData.sort(function(a,b){
+      return Number(a.price)-Number(b.price);
+    })
+  }
+
+  displayData(placeData);
+
+}
+
+function displayData(placeData){
+
+document.querySelector("#container").innerHTML="";
+
+placeData.map(function(ele){
+    var div = document.createElement("div");
+
+    var image = document.createElement("img");
+    image.setAttribute("src", ele.image_url);
+
+    var name = document.createElement("h3");
+    name.textContent = ele.name;
+
+    var div2 = document.createElement("div");
+    div2.setAttribute("id", "sub");
+
+    var p1 = document.createElement("p");
+    p1.textContent = ele.price;
+
+    var p2 = document.createElement("p");
+    p2.textContent = ele.strikedoffprice;
+
+    div2.append(p1, p2);
+    var place = document.createElement("h4");
+    place.textContent = ele.placeName;
+
+    var btn = document.createElement("button");
+    btn.setAttribute("class","add")
+    btn.textContent = "Add To Cart";
+    btn.addEventListener("click",function(){
+      addCart(ele)
+    })
+    
+    div.append(image, name, div2,place, btn);
+    document.querySelector("#container").append(div);
+});
+};
+
+function addCart(ele){
+  cartArr.push(ele);
+localStorage.setItem("cartitem",JSON.stringify(cartArr));
+alert("Add succussful");
+}
+
+</script>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check out</title>
+    <style>
+        #main{
+            align-items: center;
+            width: 30%;
+            margin: auto;
+        }
+        #form>div{
+            justify-content: center;
+            align-items: center;
+        
+            margin: 25px;
+        
+        }
+        #logo{
+            align-items: center;
+            margin: auto;
+        }
+        #form>div>input{
+            align-items: center;
+            height: 45px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 20px;
+        
+        }
+        #continue{
+            background-color: #09438b;
+            color: white;
+        }
+     
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="logo"> <img src="https://www.travelocity.com/_dms/interstitial/logo.svg?locale=en_US&siteid=80001"/> </div>
+        <hr/>
+   <div> <h1>ENTER CARD DETAILS</h1></div>
+    <form id="form">
+       <div><input id="name" type="text" placeholder="Enter name" /><br/></div>
+       <div> <input id="card" type="number" placeholder="Enter Card number" /><br/></div>
+       <div><input id="cvv" type="number" placeholder="Enter CVV" /><br/></div>
+       <div><input id="date" type="number" placeholder="Expery Date" /><br/></div>
+       <div> <input onclick="window.location.href='otp.html' " id="continue" type="submit" value="PROCEED" /></div>
+    </form>
+    </div>
+</body>
+</html>
+<script>
+ document.querySelector("#form").addEventListener("submit",formsubmit);
+    var arr=JSON.parse(localStorage.getItem("carddetails")) || [];
+    function formsubmit(event){
+        event.preventDefault();
+        var name=document.querySelector("#name").value;
+        var card=document.querySelector("#card").value;
+        var cvv=document.querySelector("#cvv").value;
+        var date=document.querySelector("#date").value;
+        
+    var obj={
+        userName: name,
+        cardAdd: card,
+        cvvNum: cvv,
+        cardDate: date,
+    };
+    arr.push(obj)
+  localStorage.setItem("carddetails",JSON.stringify(arr));
+ 
+
+window.location.href="otp.html";
+  
+
+
+    }
+</script>
