@@ -5,37 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>check out</title>
-    <style>
-        #main{
-            align-items: center;
-            width: 30%;
-            margin: auto;
-        }
-        #form>div{
-            justify-content: center;
-            align-items: center;
-        
-            margin: 25px;
-        
-        }
-        #logo{
-            align-items: center;
-            margin: auto;
-        }
-        #form>div>input{
-            align-items: center;
-            height: 45px;
-            width: 100%;
-            border-radius: 5px;
-            font-size: 20px;
-        
-        }
-        #continue{
-            background-color: #09438b;
-            color: white;
-        }
-     
-    </style>
+
+    <link rel="stylesheet" href="checkout.css"/>
+
 </head>
 <body>
     <div id="main">
@@ -52,29 +24,5 @@
     </div>
 </body>
 </html>
-<script>
- document.querySelector("#form").addEventListener("submit",formsubmit);
-    var arr=JSON.parse(localStorage.getItem("carddetails")) || [];
-    function formsubmit(event){
-        event.preventDefault();
-        var name=document.querySelector("#name").value;
-        var card=document.querySelector("#card").value;
-        var cvv=document.querySelector("#cvv").value;
-        var date=document.querySelector("#date").value;
-        
-    var obj={
-        userName: name,
-        cardAdd: card,
-        cvvNum: cvv,
-        cardDate: date,
-    };
-    arr.push(obj)
-  localStorage.setItem("carddetails",JSON.stringify(arr));
- 
+<script src="checkout.js"></script>
 
-window.location.href="otp.html";
-  
-
-
-    }
-</script>

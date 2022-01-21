@@ -5,29 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <style>
-   .main{
-       width: 30%;
-       margin: auto;
-   }
-   form>div{
-    margin: 20px;
-   }
-   form>div>input{
-       width: 100%;
-       height: 45px;
-       border-radius: 5px;
-       font-size: 20px;
-       background-color: #e7f0fe;
-   }
-   h1{
-       margin: 20px;
-   }
-   #pay{
-       background-color: #09438b;
-       color: white;
-   }
-    </style>
+    
+    <link rel="stylesheet" href="otp.css"/>
+
+
 </head>
 <body>
     <div class=main>
@@ -41,23 +22,4 @@
     </div>
 </body>
 </html>
-<script>
-    document.querySelector("#form").addEventListener("submit",formsubmit);
-var arr=JSON.parse(localStorage.getItem("carddetails")) || [];
-
-function formsubmit(event){
-    event.preventDefault();
-    var pass=document.querySelector("#pass").value;
-
-
-    if(pass="1234"){
-        alert("your payment succuss");
-    }
-    else{
-        alert(" incorrect OTP");
-    }
-    window.location.href="landingpage.html";
-
-
-}
-</script>
+<script src="otp.js"></script>

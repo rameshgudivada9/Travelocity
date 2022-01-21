@@ -5,37 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
-    <style>
-        #main{
-            align-items: center;
-            width: 30%;
-            margin: auto;
-        }
-        #form>div{
-            justify-content: center;
-            align-items: center;
-        
-            margin: 25px;
-        
-        }
-        #logo{
-            align-items: center;
-            margin: auto;
-        }
-        #form>div>input{
-            align-items: center;
-            height: 45px;
-            width: 100%;
-            border-radius: 5px;
-            font-size: 20px;
-        
-        }
-        #continue{
-            background-color: #09438b;
-            color: white;
-        }
-     
-    </style>
+    
+    <link rel="stylesheet" href="Signup.css"/>
 </head>
 <body>
     <div id="main">
@@ -52,36 +23,4 @@
     </div>
 </body>
 </html>
-<script>
-    document.querySelector("#form").addEventListener("submit",formsubmit);
-    var arr=JSON.parse(localStorage.getItem("data")) || [];
-    function formsubmit(event){
-        event.preventDefault();
-        var name=document.querySelector("#user").value;
-        var email=document.querySelector("#email").value;
-        var mobile=document.querySelector("#mobile").value;
-        var pass=document.querySelector("#pass").value;
-        
-    var obj={
-        userName: name,
-        emailAdd: email,
-        mobileNum: mobile,
-        passWord: pass,
-    };
-    arr.push(obj)
-  localStorage.setItem("data",JSON.stringify(arr));
-  for( var i=0;i<arr.length;i++){
-    if(arr[i].userName==name && arr[i].emailAdd==email && arr[i].mobileNum==mobile && arr[i].passWord==pass){
-      alert("Already have an account");
-      window.location.href="login.html";
-
-  }
-  else{
-    alert("sign up sucess");
-
-window.location.href="login.html";
-  }
-
-}
-    }
-</script>
+<script src="Signup.js"></script>

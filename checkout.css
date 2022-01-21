@@ -1,0 +1,28 @@
+#main{
+    align-items: center;
+    width: 30%;
+    margin: auto;
+}
+#form>div{
+    justify-content: center;
+    align-items: center;
+
+    margin: 25px;
+
+}
+#logo{
+    align-items: center;
+    margin: auto;
+}
+#form>div>input{
+    align-items: center;
+    height: 45px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 20px;
+
+}
+#continue{
+    background-color: #09438b;
+    color: white;
+}
