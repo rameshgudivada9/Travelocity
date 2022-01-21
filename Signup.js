@@ -17,18 +17,15 @@ arr.push(obj)
 localStorage.setItem("data",JSON.stringify(arr));
 for( var i=0;i<arr.length;i++){
     if(arr[i].userName==name && arr[i].emailAdd==email && arr[i].mobileNum==mobile && arr[i].passWord==pass){
-      alert("Already have an account");
+        alert("sign up sucess");
       window.location.href="login.html";
     }
-else if(arr[i].userName=="" || arr[i].emailAdd=="" || arr[i].mobileNum=="" || arr[i].passWord==""){
-  alert("please fill the details");
+//  if(arr[i].userName=="" || arr[i].emailAdd=="" || arr[i].mobileNum=="" || arr[i].passWord==""){
+//   alert("please fill the details");
+  
+//   window.location.href="Signup.html";
+// }
 
-}
-else{
-alert("sign up sucess");
-
-window.location.href="login.html";
-}
 
 }
 }

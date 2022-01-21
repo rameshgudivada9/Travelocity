@@ -13,15 +13,15 @@ function formsubmit(event){
             alert(`welcome ${name}`);
             window.location.href="landingpage.html"
         }
-        else if(arr[i].userName!=name && arr[i].passWard==pass){
-            alert("check username");
-        }
-        else if((arr[i].userName==name && arr[i].passWard!=pass)){
-            alert("check password")
-        }
-        else{
-            alert("sign up first")
-        }
+        // else if(arr[i].userName!=name && arr[i].passWard==pass){
+        //     alert("check username");
+        // }
+        // else if((arr[i].userName==name && arr[i].passWard!=pass)){
+        //     alert("check password")
+        // }
+        // else{
+        //     alert("sign up first")
+        // }
     }
 
 }
