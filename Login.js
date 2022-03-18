@@ -11,7 +11,7 @@ function formsubmit(event){
     for( var i=0;i<arr.length;i++){
         if(arr[i].userName==name && arr[i].passWord==pass){
             alert(`welcome ${name}`);
-            window.location.href="landingpage.html"
+            window.location.href="index.html"
         }
         // else if(arr[i].userName!=name && arr[i].passWard==pass){
         //     alert("check username");

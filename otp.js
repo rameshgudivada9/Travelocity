@@ -13,7 +13,7 @@
         else{
             alert(" incorrect OTP");
         }
-        window.location.href="landingpage.html";
+        window.location.href="index.html";
     
     
     }
